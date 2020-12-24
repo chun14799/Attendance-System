@@ -1,15 +1,19 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import React from 'react';
+// import AlbumFeature from './features/Album';
+// import ColorBox from './Components/ColorBox';
+// import TodoFeature from './features/Todo';
+import Login from './Components/login/login';
+import Register from './Components/login/register';
+import ForgetPassword from './Components/ForgetPassword';
 
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hoang Long 1
-        </p>
-      </header>
+      <Login/>
+      {/* <ForgetPassword/> */}
     </div>
   );
 }
