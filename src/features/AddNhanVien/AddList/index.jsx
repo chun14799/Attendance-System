@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../AddList/style.scss';
 
 AddNhanVienList.propTypes = {
     
@@ -7,8 +8,23 @@ AddNhanVienList.propTypes = {
 
 function AddNhanVienList(props) {
     return (
-        <div>
-            
+        <div className="Add-list">
+            <ul className="add-info">
+                <li>ID</li>
+                <li>Họ và Tên</li>
+                <li>Chức vụ</li>
+                <li>Mail</li>
+                <li>Văn phòng</li>
+                <li>Sdt</li>
+            </ul>
+            <ul className="input-info">
+                <input type="text"/>
+                <input type="text"/>
+                <input type="text"/>
+                <input type="text"/>
+                <input type="text"/>
+                <input type="text"/>
+            </ul>
         </div>
     );
 }
