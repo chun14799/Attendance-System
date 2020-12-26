@@ -1,0 +1,12 @@
+.nhanvien-info{
+    margin-top: 20px;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        .nhanvien-name{
+            position: relative;
+            left: 0px;
+            transform: translateX(-150px);
+        }
+    }
+}
