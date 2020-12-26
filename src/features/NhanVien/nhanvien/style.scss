@@ -16,8 +16,10 @@
         li{
             font-size: 18px;
             cursor: pointer;
-            &:hover{
-                color: #09a6FF;
+            a{
+                &:hover{
+                    color: #09a6FF;
+                }
             }
         }
     }

@@ -16,8 +16,8 @@ function NhanVienDetails({nhanvien}) {
                 <li className="nhanvien-last">{nhanvien.email}</li>
                 <li className="nhanvien-last">{nhanvien.sdt}</li>
                 <ul className="btn-edit-delete">
-                    <li>Sửa</li>
-                    <li>Xóa</li>
+                    <li><a href="">Sửa</a></li>
+                    <li><a href="">Xóa</a></li>
                 </ul>
             </ul>
         </div>

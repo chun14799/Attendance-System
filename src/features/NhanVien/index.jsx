@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import NhanVienList from './NhanVienList';
 import '../NhanVien/style.scss';
 import Header from '../../Components/Header';
+import InfoBar from '../../Components/InfoBar';
 
 
 NhanVien.propTypes = {
@@ -39,6 +40,7 @@ function NhanVien(props) {
     return (
         <div>
             <Header/>
+            <InfoBar/>
             <NhanVienList DSNhanVien={DSNhanVien}/>
         </div>
     );

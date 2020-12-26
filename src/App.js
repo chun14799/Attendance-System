@@ -8,15 +8,18 @@ import TodoFeature from './features/Todo';
 import Login from './Components/login/login';
 import Register from './Components/login/register';
 import ForgetPassword from './Components/ForgetPassword';
+import { Route } from 'react-router-dom';
+import AddNhanVien from './features/AddNhanVien';
 
 
 function App() {
   
   return (
     <div className="App">
-      {/* <Login/> */}
+      <Route path="/Login" component={Login}/>  
       {/* <ForgetPassword/> */}
-      <NhanVien/>
+      <Route path="/NhanVien" component={NhanVien} />
+      <Route path="/AddNhanVien" component={AddNhanVien}/>
     </div>
   );
 }

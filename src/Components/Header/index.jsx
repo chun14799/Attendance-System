@@ -53,16 +53,6 @@ function Header(props) {
                     <p>Tất cả</p>
                 </div>
             </div>
-            <div className="info-bar">
-                <p>ID</p>
-                <p className="nhanvien-name">Tên</p>
-                <p className="nhanvien-office">Văn phòng làm việc</p>
-                <p className="nhanvien-chucvu">Chức vụ</p>
-                <p className="nhanvien-email">Email</p>
-                <p className="sdt">Sdt</p>
-                <button className="btn-add">Thêm</button>
-            </div>
-            <hr/>
         </div>
     );
 }
