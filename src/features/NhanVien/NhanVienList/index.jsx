@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Nhanvien from '..';
 import '../NhanVienList/style.scss';
 import NhanVienDetails from '../nhanvien';
 import '../NhanVienList/style.scss'

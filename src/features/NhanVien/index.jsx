@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import NhanVienList from './NhanVienList';
 import '../NhanVien/style.scss';
 import Header from '../../Components/Header';

@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import '../Header/style.scss';
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faCaretDown, faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-Header.propTypes = {
-    
-};
+import { faBell, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function Header(props) {
     const caretdown = <FontAwesomeIcon icon={faCaretDown} />
@@ -16,34 +10,34 @@ function Header(props) {
         <div>
             <div className="header-menu">
                 <ul className="left-menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Nhân Viên</a></li>
+                    <li><a href="/#">Home</a></li>
+                    <li><a href="/#">Nhân Viên</a></li>
                     <li>
-                        <a href="">{caretdown}</a>
+                        <a href="/#">{caretdown}</a>
                         <ul className="dropdown">
-                            <li><a href="">Danh sách nhân viên</a></li>
-                            <li><a href="">Lịch sử chấm công</a></li>
+                            <li><a href="/#">Danh sách nhân viên</a></li>
+                            <li><a href="/#">Lịch sử chấm công</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Chấm công</a></li>
+                    <li><a href="/#">Chấm công</a></li>
                     <li>
-                        <a href="">{caretdown}</a>
+                        <a href="/#">{caretdown}</a>
                         <ul className="dropdown-chamcong">
-                            <li><a href="">Chấm công ra vào</a></li>
-                            <li><a href="">Lịch sử chấm công</a></li>
+                            <li><a href="/#">Chấm công ra vào</a></li>
+                            <li><a href="/#">Lịch sử chấm công</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Quản lý dự án</a></li>
+                    <li><a href="/#">Quản lý dự án</a></li>
                 </ul>
 
                 <ul className="right-menu">
-                    <li><a href="">{bell}</a></li>
-                    <li className="user-name"><a href="">Hoàng Long</a></li>
+                    <li><a href="/#">{bell}</a></li>
+                    <li className="user-name"><a href="/#">Hoàng Long</a></li>
                     <li>
-                        <a href="">{caretdown}</a>
+                        <a href="/#">{caretdown}</a>
                         <ul className="dropdown">
-                            <li><a href="">Xem profile</a></li>
-                            <li><a href="">Đăng xuất</a></li>
+                            <li><a href="/#">Xem profile</a></li>
+                            <li><a href="/#">Đăng xuất</a></li>
                         </ul>
                     </li>
                 </ul>

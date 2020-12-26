@@ -1,10 +1,4 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
-
-ColorBox.propTypes = {
-    
-};
-
+import React, {useState} from 'react'
 function ColorBox(props) {
     const [color, setColor] = useState('white');
 
