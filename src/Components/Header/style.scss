@@ -91,18 +91,23 @@ button{
         left: 0px;
         transform: translateX(-50px);
     }
-    .space{
-        margin-left: 100px;
+    .nhanvien-office{
+        margin-left: 50px;
     }
-    .chucvu{
+    .nhanvien-chucvu{
         position: relative;
         left: 0px;
-        transform: translateX(-30px);
+        transform: translateX(-70px);
+    }
+    .nhanvien-email{
+        position: relative;
+        left: 0px;
+        transform: translateX(-70px);
     }
     .sdt{
         position: relative;
         left: 0px;
-        transform: translateX(50px);
+        transform: translateX(-50px);
     }
     .btn-add{
         width: 120px;

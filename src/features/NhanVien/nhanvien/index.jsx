@@ -7,14 +7,18 @@ NhanVienDetails.propTypes = {
 
 function NhanVienDetails({nhanvien}) {
     return (
-        <div className="nhanvien-info">
-            <ul>
+        <div>
+            <ul className="nhanvien-info">
                 <li>{nhanvien.id}</li>
                 <li className="nhanvien-name">{nhanvien.name}</li>
                 <li className="nhanvien-last">{nhanvien.office}</li>
                 <li className="nhanvien-last">{nhanvien.chucvu}</li>
                 <li className="nhanvien-last">{nhanvien.email}</li>
                 <li className="nhanvien-last">{nhanvien.sdt}</li>
+                <ul className="btn-edit-delete">
+                    <li>Sửa</li>
+                    <li>Xóa</li>
+                </ul>
             </ul>
         </div>
   );

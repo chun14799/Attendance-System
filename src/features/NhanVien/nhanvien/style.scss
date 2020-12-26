@@ -1,12 +1,24 @@
 .nhanvien-info{
     margin-top: 20px;
-    ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1820px;
+    .nhanvien-name{
+        position: relative;
+        left: 0px;
+        transform: translateX(-150px);
+    }
+    .btn-edit-delete{
         display: flex;
         justify-content: space-between;
-        .nhanvien-name{
-            position: relative;
-            left: 0px;
-            transform: translateX(-150px);
+        width: 100px;
+        li{
+            font-size: 18px;
+            cursor: pointer;
+            &:hover{
+                color: #09a6FF;
+            }
         }
     }
 }
