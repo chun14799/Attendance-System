@@ -20,88 +20,11 @@ button{
     outline: none;
     border: none;
 }
-.header-menu{
-    background: #09a6ff;
-    height: 100px;
-    width: 1920px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .left-menu{
-        display: flex;
-        li{
-            margin-left: 20px;
-            a{
-                color: white;
-                font-size: 24px;
-                &:hover{
-                    color: red;
-                }
-            }
-        }
-    }
-    .right-menu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        li{
-            margin-left: 10px;
-            a{
-                color: white;
-                font-size: 24px;
-                &:hover{
-                    color: red;
-                }
-            }
-        }
-    }
+.status{
+    position: absolute;
+    transform: translate(20px, -130px);
 }
-.container2{
-    height: 135px;
-    background-color: #C4C4C4;
-    position: relative;
-    .text-box{
-        position: absolute;
-        background: white;
-        width: 190px;        
-        bottom: 0;
-        transform: translateX(100px);
-        p{
-            height: 65px;
-            color: black;
-            font-size: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-}
-.info-bar{
-    margin-left: 35px;
-    width: 1850px;
-    height: 92px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    p{
-        font-size: 24px;
-    }
-    .space{
-        margin-left: 200px;
-    }
-    .btn-add{
-        width: 120px;
-        height: 80px;
-        border: 1px #0EFC25;
-        border-radius: 4px;
-        background-color: #0EFC25;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        cursor: pointer;
-    }
-}
+
 hr{
     margin-top: 20px;
     margin-left: 50px;

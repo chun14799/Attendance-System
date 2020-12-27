@@ -8,8 +8,8 @@ import '../ConfirmBackButton/style.scss';
 function ConfirmBackButton(props) {
     return (
         <div className="button">
-            <p>Lưu</p>
-            <p>Trở về</p>
+            <p><a href="/nhanvien">Lưu</a></p>
+            <p><a href="/nhanvien">Trở về</a></p>
         </div>
     );
 }

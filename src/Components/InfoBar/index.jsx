@@ -11,7 +11,7 @@ function InfoBar(props) {
                 <p className="nhanvien-chucvu">Chức vụ</p>
                 <p className="nhanvien-email">Email</p>
                 <p className="sdt">Sdt</p>
-                <p className="btn-add"><a href="/#">Thêm</a></p>
+                <p className="btn-add"><a href="/addnhanvien">Thêm</a></p>
             </div>
             <hr/>
         </div>

@@ -13,10 +13,12 @@
         display: flex;
         justify-content: space-between;
         width: 100px;
+        padding-left: 30px;
         li{
             font-size: 18px;
             cursor: pointer;
             a{
+                color: #C4C4C4;
                 &:hover{
                     color: #09a6FF;
                 }

@@ -39,6 +39,7 @@ function NhanVien(props) {
     return (
         <div>
             <Header/>
+            <h2 className="status">Nhân viên</h2>
             <InfoBar/>
             <NhanVienList DSNhanVien={DSNhanVien}/>
         </div>

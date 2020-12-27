@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
 import NhanVienDetails from '../NhanVienDetails';
-import './style.scss'
+
 
 NhanVienList.propTypes = {
     DSNhanVien: PropTypes.array.isRequired,
