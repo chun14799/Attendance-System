@@ -1,9 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 import './style.scss';
 import AddListUser from './AddList';
-import ConfirmBackButton from '../../components/ConfirmBackButton';
+import ConfirmBackButton from '../../../components/ConfirmBackButton';
 
 function AddUser(props) {
     return (

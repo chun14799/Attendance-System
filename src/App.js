@@ -1,18 +1,21 @@
 import './App.scss';
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Users from './features/Users';
-import AddUsers from './features/AddUsers';
-import EditUsers from './features/EditUsers';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import GetUsers from './features/Users/GetUsers';
+import AddUsers from './features/Users/AddUsers';
+import EditUsers from './features/Users/EditUsers';
 
 
 function App() {
-  
   return (
     <div className="App">
-      <Route path="/users" component={Users}/>
-      <Route path="/addusers" component={AddUsers}/>
-      <Route path="/editusers" component={EditUsers}/>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/users" component={GetUsers}/>
+          <Route path="/addusers" component={AddUsers}/>
+          <Route path="/editusers" component={EditUsers}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

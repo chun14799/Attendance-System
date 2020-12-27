@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.scss';
-import UserDetails from '../UserDetails';
-
+import UserDetails from '../../UserDetails';
 
 UserList.propTypes = {
     listUser: PropTypes.array.isRequired,
@@ -13,7 +12,7 @@ function UserList({ listUser }) {
         <div>
             <ul className="user-list">
                 {listUser.map(user =>(
-                    <li key={user.id}>
+                    <li key={user._id}>
                         <UserDetails user={user}/>
                         <hr/>
                     </li>

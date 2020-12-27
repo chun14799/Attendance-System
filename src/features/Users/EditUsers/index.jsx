@@ -1,8 +1,8 @@
 import React from 'react';
-import ConfirmBackButton from '../../components/ConfirmBackButton';
+import ConfirmBackButton from '../../.././components/ConfirmBackButton';
 // import PropTypes from 'prop-types';
-import Header from '../../components/Header';
-import EditUserList from './EditList';
+import Header from '../../../components/Header';
+import EditUserList from '../EditUsers/EditList';
 
 // EditNhanVien.propTypes = {
     

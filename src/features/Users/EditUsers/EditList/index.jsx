@@ -1,5 +1,5 @@
 import React from 'react';
-import "../EditList/style.scss";
+import "./style.scss";
 import PropTypes from 'prop-types';
 
 
@@ -13,14 +13,23 @@ function EditUserList({listUser}) {
         <div>
             <div className="Edit-list">
                 <ul className="edit-info">
-                    <li>ID</li>
-                    <li>Họ và Tên</li>
-                    <li>Chức vụ</li>
-                    <li>Mail</li>
-                    <li>Văn phòng</li>
-                    <li>Sdt</li>
+                    <li>Full Name</li>
+                    <li>Image</li>
+                    <li>PIN code</li>
+                    <li>Date of Birth</li>
+                    <li>Home Address</li>
+                    <li>Gross Salary</li>
+                    <li>Net Salary</li>
+                    <li>Note</li>
+                    <li>Department</li>
+                    <li>Role</li>
+                    <li>Shift</li>
                 </ul>
                 <ul className="input-info">
+                    <input type="text"/>
+                    <input type="text"/>
+                    <input type="text"/>
+                    <input type="text"/>
                     <input type="text"/>
                     <input type="text"/>
                     <input type="text"/>
