@@ -1,9 +1,9 @@
 import './App.scss';
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NhanVien from './Features/NhanVien';
-import AddNhanVien from './Features/AddNhanVien';
-import EditNhanVien from './Features/EditNhanVien';
+import NhanVien from './features/NhanVien';
+import AddNhanVien from './features/AddNhanVien';
+import EditNhanVien from './features/EditNhanVien';
 
 
 function App() {

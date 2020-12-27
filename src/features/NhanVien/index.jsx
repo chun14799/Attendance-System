@@ -1,8 +1,8 @@
 import React from 'react';
 import NhanVienList from './NhanVienList';
 import '../NhanVien/style.scss';
-import Header from '../../Components/Header';
-import InfoBar from '../../Components/InfoBar';
+import Header from '../../components/Header';
+import InfoBar from '../../components/InfoBar';
 
 
 NhanVien.propTypes = {
