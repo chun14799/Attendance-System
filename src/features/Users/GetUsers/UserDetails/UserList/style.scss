@@ -1,8 +1,11 @@
-.nhanvien-list{
+.user-list{
     li{
         margin-left: 25px;
         width: 1850px;
         font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         hr{
             margin-top: 20px;
             margin-left: 25px;
