@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import '../AddList/style.scss';
+// import PropTypes from 'prop-types';
+import './style.scss';
 
-AddNhanVienList.propTypes = {
+// AddNhanVienList.propTypes = {
     
-};
+// };
 
 function AddNhanVienList(props) {
     return (

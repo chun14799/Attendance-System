@@ -1,13 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Header from '../../Components/Header';
-import '../AddNhanVien/style.scss';
+import './style.scss';
 import AddNhanVienList from './AddList';
 import ConfirmBackButton from '../../Components/ConfirmBackButton';
 
-AddNhanVien.propTypes = {
+// AddNhanVien.propTypes = {
     
-};
+// };
 
 function AddNhanVien(props) {
     return (
