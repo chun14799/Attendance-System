@@ -3,12 +3,12 @@ import "../EditList/style.scss";
 import PropTypes from 'prop-types';
 
 
-EditNhanVienList.propTypes = {
-    DSNhanVien: PropTypes.array.isRequired,
+EditUserList.propTypes = {
+    listUser: PropTypes.array.isRequired,
 };
 
 
-function EditNhanVienList({DSNhanVien}) {
+function EditUserList({listUser}) {
     return (
         <div>
             <div className="Edit-list">
@@ -33,4 +33,4 @@ function EditNhanVienList({DSNhanVien}) {
     );
 }
 
-export default EditNhanVienList;
+export default EditUserList;

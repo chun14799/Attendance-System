@@ -6,7 +6,7 @@ import './style.scss';
     
 // };
 
-function AddNhanVienList(props) {
+function AddListUser(props) {
     return (
         <div className="Add-list">
             <ul className="add-info">
@@ -29,4 +29,4 @@ function AddNhanVienList(props) {
     );
 }
 
-export default AddNhanVienList;
+export default AddListUser;

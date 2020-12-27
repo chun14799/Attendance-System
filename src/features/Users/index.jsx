@@ -1,16 +1,16 @@
 import React from 'react';
-import NhanVienList from './NhanVienList';
-import '../NhanVien/style.scss';
+import UserList from './UserList';
+import '../Users/style.scss';
 import Header from '../../components/Header';
 import InfoBar from '../../components/InfoBar';
 
 
-NhanVien.propTypes = {
+User.propTypes = {
     
 };
 
-function NhanVien(props) {
-    const DSNhanVien =[
+function User(props) {
+    const listUser =[
         {
             id: 1,
             name: "Vũ Hoàng Hiệp",
@@ -39,11 +39,11 @@ function NhanVien(props) {
     return (
         <div>
             <Header/>
-            <h2 className="status">Nhân viên</h2>
+            <h2 className="status">Nguoi dung</h2>
             <InfoBar/>
-            <NhanVienList DSNhanVien={DSNhanVien}/>
+            <UserList listUser={listUser}/>
         </div>
     );
 }
 
-export default NhanVien;
+export default User;

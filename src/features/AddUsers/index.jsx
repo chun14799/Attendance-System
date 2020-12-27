@@ -2,22 +2,18 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import './style.scss';
-import AddNhanVienList from './AddList';
+import AddListUser from './AddList';
 import ConfirmBackButton from '../../components/ConfirmBackButton';
 
-// AddNhanVien.propTypes = {
-    
-// };
-
-function AddNhanVien(props) {
+function AddUser(props) {
     return (
         <div className="bg">
             <Header/>
             <h2 className="status">Thêm Nhân Viên</h2>
-            <AddNhanVienList/>
+            <AddListUser/>
             <ConfirmBackButton/>
         </div>
     );
 }
 
-export default AddNhanVien;
+export default AddUser;

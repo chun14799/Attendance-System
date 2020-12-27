@@ -1,18 +1,18 @@
 import './App.scss';
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NhanVien from './features/NhanVien';
-import AddNhanVien from './features/AddNhanVien';
-import EditNhanVien from './features/EditNhanVien';
+import Users from './features/Users';
+import AddUsers from './features/AddUsers';
+import EditUsers from './features/EditUsers';
 
 
 function App() {
   
   return (
     <div className="App">
-      <Route path="/nhanvien" component={NhanVien}/>
-      <Route path="/addnhanvien" component={AddNhanVien}/>
-      <Route path="/editnhanvien" component={EditNhanVien}/>
+      <Route path="/users" component={Users}/>
+      <Route path="/addusers" component={AddUsers}/>
+      <Route path="/editusers" component={EditUsers}/>
     </div>
   );
 }
