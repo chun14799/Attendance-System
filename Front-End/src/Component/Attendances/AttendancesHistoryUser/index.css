@@ -1,0 +1,50 @@
+.HeaderEditAttendances {
+    background-color: #C4C4C4;
+    padding: 20px 50px 0px 50px
+}
+.HeaderEditAttendances .TextHeader {
+}
+.HeaderEditAttendances .TextContent{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 50px;
+}
+.ContentTable {
+    padding: 10vh;
+}
+.TableDataHistory thead tr th{
+    border-top: none;
+    text-align: center;
+}
+.TableDataHistory tbody tr td {
+    padding: 30px;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
+.MorningClass {
+    padding: 10px;
+    background-color: #0EFC25;
+    color: #000000;
+    border-radius: 5px;
+}
+.afternoonClass {
+    padding: 10px;
+    background-color: #F6101E;
+    color: #000000;
+    border-radius: 5px;
+}
+.nightClass {
+    padding: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+.checkOutButton {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+}

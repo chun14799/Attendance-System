@@ -1,0 +1,32 @@
+.HeaderMain {
+    padding: 30px 40px;
+    background-color: #9D9D9D;
+}
+.MainContent {
+    display: flex;
+    flex-direction: row;
+    padding: 10vh 5vh ;
+}
+.TableAdd {
+    width: 100%;
+}
+.TableAdd tr{
+    margin-top: 20px;
+}
+.MainInput {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+.InPutName {
+    flex-basis: 200px;
+}
+.InputData {
+    min-width: 300px;
+    padding: 5px 10px;
+}
+.btnSubmitData {
+    padding: 5px 30px;
+    background-color: #C4C4C4;
+    margin-left: 50px;
+}
