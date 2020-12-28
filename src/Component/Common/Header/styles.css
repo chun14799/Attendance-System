@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Header.container-fluid{
+    background-color: #09A6FF;
+}
+.Header.container-fluid .Header-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Header.container-fluid .Header-left div.item.active:after {
+    content: '';
+    display: block;
+    border-top: 5px solid #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+.Header.container-fluid .Header-left div.item {
+    position: relative;
+    padding: 1rem;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    height: 10vh;
+}
+
+.Header.container-fluid .Header-left div.item .name {
+    color: #fff;
+}
+.Header.container-fluid .Header-left div.item path {
+    color: #fff;
+}
+.Header.container-fluid .Header-left div.item svg {
+    margin-left: 5px;
+}
+
+.Header.container-fluid .Header-left div.item .wrapper-item  div.list-item{
+    position: absolute;
+    top: 10vh;
+    width: 200px;
+    display: none;
+    left: 0;
+}
+.Header.container-fluid .Header-left div.item .wrapper-item .list-item  p{
+    margin: 0;
+    padding: 1rem;
+}
+.Header.container-fluid .Header-left div.item:hover .list-item{
+   display: block!important;
+   background-color: #fff;
+   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2)
+}
+.Header.container-fluid .Header-left div.item:hover{
+    background-color: #4195c5;
+    transition: .8s;
+ }
+ .Header.container-fluid .header-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+ }
+ .Header.container-fluid .header-right  div:nth-child(2) {
+    padding: 1rem;
+    cursor: pointer;
+    /* height: 100%; */
+    position: absolute;
+    top: 10vh;
+    background-color: #fff;
+    width: 100%;
+ }
+ .Header.container-fluid .header-right  div.item-right{
+    color: #fff;
+    padding: 10px;
+ }
+ .Header.container-fluid .header-right  div.item-right span{
+    padding: 0 10px;
+ }
+ .Header.container-fluid .header-right  div:nth-child(2) path{
+    color: #fff;
+ }
+ .Header.container-fluid .header-right .list-item {
+    display: none;
+ }
+ .Header.container-fluid .header-right:hover {
+    background-color: #4195c5;
+    transition: .8s;
+ }
+ .Header.container-fluid .header-right:hover .list-item{
+    display: block!important;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2)
+ }
+ .Header.container-fluid .header-right_{
+    display: flex;
+    justify-content: flex-end;
+}
+.Header.container-fluid .header-right .list-item p{
+    margin: 0;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+.Header.container-fluid .header-right .list-item p:hover{
+    background-color: "#0A72ED";
+}
+.Header.container-fluid .header-right .list-item a{
+   text-decoration: none;
+}
+.MainEdit .elementEdit {
+    margin-top: 10px;
+}

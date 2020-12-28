@@ -1,0 +1,31 @@
+.ContainerList {
+    background-color: #FFFFFF;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+.ListHeader {
+    background-color: #C4C4C4;
+    background-size: 100% 100%;
+    padding-top: 40px;
+}
+.ListHeader .TextHeader {
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+}
+.ContentListData {
+    padding: 10vh 30px;
+
+}
+.ContentListData thead tr th{
+    border-top: none;
+    text-align: center;
+}
+.ContentListData tbody tr td {
+    padding: 30px;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+}
