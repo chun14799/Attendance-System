@@ -46,7 +46,7 @@ export default  function(){
             <Header />
             <div>
                 <div className="HeaderMain">
-                    <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span>-></span><span>Chấm Công Ra Vào</span>
+                    <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span></span><span>Chấm Công Ra Vào</span>
                 </div>
                 <div className="MainContent">
                     <div style={{flex:1,padding:"0px 30px"}}>
