@@ -1,18 +1,9 @@
 import React ,{useState}from 'react';
-import {LoginUser} from './../../../api/user';
-import {
-    Link
-} from "react-router-dom";
 import {toast} from 'react-toastify';
 import './login.css';
 import { useHistory } from "react-router-dom";
-export default function(){
+export default function Forgot(){
     let history = useHistory();
-    let user = localStorage.getItem('USER');
-    if(user){
-        history.replace("/");
-        return null
-    }
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const OnSubmitLogin = ()=>{
@@ -23,7 +14,7 @@ export default function(){
         <div className="ContainerLogin">
             <div className="ContentFrom">
                 <div style={{textAlign:"center",marginBottom:"10px"}}>
-                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" />
+                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" alt="icon-login"/>
                 </div>
                
                 <div style={{textAlign:"center",fontSize:"20px"}}>

@@ -5,10 +5,8 @@ import {getListAttendances,deleteAttendaces,checkOutAttendances} from './../../.
 import { toast } from 'react-toastify';
 import moment from 'moment'
 import './index.css'
-export default function(){
+export default function AttendancesHistoryUser(){
     const [listData,setListData] = useState([]);
-    let User = localStorage.getItem("USER");
-    User = JSON.parse(User);
     useEffect(()=>{
         getListAttendances().then(result=>{
             console.log(result.data);
