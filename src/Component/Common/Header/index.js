@@ -16,10 +16,8 @@ const Header = () => {
     }
     useEffect(()=>{
         let data = localStorage.getItem("USER");
-        if(typeof data!=='undefined'||data!==''){
-            data= JSON.parse(data);
-            setUser({...data})
-        }
+        data= JSON.parse(data);
+        setUser({...data})
     },[])
     const logOutUser = ()=>{
         setUserData({
@@ -43,8 +41,6 @@ const Header = () => {
                                     <span className="name">Home</span>
                                 </div>
                             </div>
-                            {
-                                    user.roleId===1?
                                     <div
                                     className={`item ${tab === 1 ? "active" : ""}`}
                                     onClick={() => onSetTab(1)}
@@ -59,8 +55,7 @@ const Header = () => {
                                             <p><Link to="/attendances/history">Lịch sử chấm công nv</Link></p>
                                         </div>
                                     </div>
-                                </div>:null
-                            }
+                                </div>
                             
                             <div
                                 className={`item ${tab === 2 ? "active" : ""}`}
