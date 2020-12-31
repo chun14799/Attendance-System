@@ -1,13 +1,13 @@
-import React ,{useState,useEffect,useRef}from 'react';
+import React ,{useState,useEffect}from 'react';
 import Header from './../../Common/Header';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {getListUser} from './../../../api/user';
-import {CreateCheckInAttendances} from './../../../api/attendances';
+import {createCheckInAttendances} from './../../../api/attendances';
 import { toast } from 'react-toastify';
 import Author from './../../Common/AuthorComponent';
 import './index.css'
-export default  function(){
+export default function AttendancesAdd(){
     const [listUser,setListUser]=useState([]);
     const [id,setId] = useState(null);
     const [fullname,setFullName]=useState("");
@@ -26,7 +26,7 @@ export default  function(){
     const onChangeUser=(e)=>{
         setId(e.target.value)
         listUser.forEach((item)=>{
-            if(item._id==e.target.value){
+            if(item._id===e.target.value){
                 setFullName(item.fullname);
                 setDepartment(item.department);
                 setEmail(item.email);
@@ -37,7 +37,7 @@ export default  function(){
         if(!id){
             toast.error("Vui Lòng Chọn Nhân Viên !!!");
         }
-        CreateCheckInAttendances(id,shift,note).then(result=>{
+        createCheckInAttendances(id,shift,note).then(result=>{
             toast.success("Check In Thành Công");
         })
     }

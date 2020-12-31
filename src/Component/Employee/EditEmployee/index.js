@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './../../Common/Header';
 import {useParams} from 'react-router-dom';
-import {getDetialUser,UpdateUserDetial} from './../../../api/user';
+import {getDetailUser,updateUserDetail} from './../../../api/user';
 import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import Author from './../../Common/AuthorComponent';
@@ -15,7 +15,7 @@ export default function ListEmployee (){
     const [department,setDepartment] = React.useState("");
     const [email,setEmail] = React.useState("");
     React.useEffect(()=>{
-        getDetialUser(id).then(result=>{
+        getDetailUser(id).then(result=>{
             console.log(result);
             setFullname(result.data.fullname)
             setPhone(result.data.phone)
@@ -25,7 +25,7 @@ export default function ListEmployee (){
         })
     },[])
     const onSubmitUpdate =()=>{
-        UpdateUserDetial(id,fullname,department,job,phone,email).then(()=>{
+        updateUserDetail(id,fullname,department,job,phone,email).then(()=>{
             toast.success("Cập Nhật Thành Công !!!")
             history.push("/employee")
         })

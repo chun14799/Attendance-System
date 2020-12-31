@@ -1,14 +1,14 @@
 import React ,{useState,useEffect} from 'react';
 import Header from './../../Common/Header';
 import {Table} from 'react-bootstrap';
-import {GetListAttendances,deleteAttendaces,checkOutAttendances} from './../../../api/attendances';
+import {getListAttendances,deleteAttendaces,checkOutAttendances} from './../../../api/attendances';
 import { toast } from 'react-toastify';
 import moment from 'moment'
 import './index.css'
-export default function(){
+export default function AttendanceHistory(){
     const [listData,setListData] = useState([]);
     useEffect(()=>{
-        GetListAttendances().then(result=>{
+        getListAttendances().then(result=>{
             console.log(result.data);
             setListData(result.data);
         })
@@ -16,7 +16,7 @@ export default function(){
     const _deleteAttendances =(id)=>{
         if(window.confirm("Bạn Có Thực Sự Muốn Xóa Không")){
             deleteAttendaces(id).then(result=>{
-                GetListAttendances().then(result=>{
+                getListAttendances().then(result=>{
                     setListData(result.data);
                 })
                 toast.success("Xóa Thành Công!!!")
@@ -27,7 +27,7 @@ export default function(){
     const _checkOutAttendances =(id)=>{
         checkOutAttendances(id).then(result=>{
             console.log(result);
-            GetListAttendances().then(result=>{
+            getListAttendances().then(result=>{
                 setListData(result.data);
             })
             toast.success("Check Out Thành Công!!!")
@@ -78,7 +78,7 @@ export default function(){
             <div>
                 <div className="HeaderEditAttendances">
                     <div className="TextHeader">
-                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span>-></span><span>Lịch Sử Chấm Công</span>
+                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span></span><span>Lịch Sử Chấm Công</span>
                     </div>
                     <div className="TextContent">
                         <span style={{backgroundColor:"white",padding:"5px 15px"}}>Tất Cả</span>

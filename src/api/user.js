@@ -14,10 +14,10 @@ export const getListUser=()=>{
 export const deleteUser=(id)=>{
     return axios.delete(`/users/${id}`)
 }
-export const getDetialUser=(id)=>{
+export const getDetailUser=(id)=>{
     return axios.get(`/users/${id}`)
 }
-export const UpdateUserDetial=(id,fullname,department,job,phone,email)=>{
+export const updateUserDetail=(id,fullname,department,job,phone,email)=>{
     return axios.put(`/users/${id}`,{
         fullname,
         job,
@@ -26,8 +26,8 @@ export const UpdateUserDetial=(id,fullname,department,job,phone,email)=>{
         phone
     })
 }
-export const LoginUser=(email,password)=>{
-    return axios.post("/login",{
+export const loginUser=(email,password)=>{
+    return axios.post("/users/login",{
         email:email,
         password:password
     })
