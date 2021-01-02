@@ -68,7 +68,7 @@ const Header = () => {
                                     </div>
                                     <div className="list-item">
                                         <p><Link to="/attendances/add">Chấm Công Ra Vào </Link></p>
-                                        <p><Link to="/attendances/history">Lịch sử chấm công nv</Link></p>
+                                        <p><Link to="/attendances/user">Lịch sử chấm công nv</Link></p>
                                     </div>
                                 </div>
                             </div>

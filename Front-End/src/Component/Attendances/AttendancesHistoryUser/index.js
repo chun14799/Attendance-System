@@ -10,7 +10,7 @@ export default function(){
     let User = localStorage.getItem("USER");
     User = JSON.parse(User);
     useEffect(()=>{
-        GetListAttendances().then(result=>{
+        GetListAttendances(User._id).then(result=>{
             console.log(result.data);
             setListData(result.data);
         })
@@ -20,7 +20,7 @@ export default function(){
     const _deleteAttendances =(id)=>{
         if(window.confirm("Bạn Có Thực Sự Muốn Xóa Không")){
             deleteAttendaces(id).then(result=>{
-                GetListAttendances().then(result=>{
+                GetListAttendances(User._id).then(result=>{
                     setListData(result.data);
                 })
                 toast.success("Xóa Thành Công!!!")
@@ -30,8 +30,7 @@ export default function(){
     }
     const _checkOutAttendances =(id)=>{
         checkOutAttendances(id).then(result=>{
-            console.log(result);
-            GetListAttendances().then(result=>{
+            GetListAttendances(User._id).then(result=>{
                 setListData(result.data);
             })
             toast.success("Check Out Thành Công!!!")

@@ -6,7 +6,10 @@ export const CreateCheckInAttendances=(user,shift,note)=>{
         note
     })
 }
-export const GetListAttendances=()=>{
+export const GetListAttendances=(id)=>{
+    if(id){
+        return axios.get(`/attendances?id=${id}`);
+    }
     return axios.get("/attendances");
 }
 export const deleteAttendaces=(id)=>{
