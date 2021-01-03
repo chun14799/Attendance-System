@@ -1,23 +1,36 @@
 import axios from './index';
-
-let token = localStorage.getItem("auth-token")
-            if(token==null) {
-                localStorage.setItem("auth-token","")
-                token=""
-            }
-export const createCheckInAttendances=(user,shift,note)=>{
+export const CreateCheckInAttendances=(user,shift,note)=>{
     return axios.post("/attendances",{
         user,
         shift,
         note
-    }, {headers:{"x-auth-token":token}})
+    })
 }
-export const getListAttendances=()=>{
-    return axios.get("/attendances", {headers:{"x-auth-token":token}});
+export const GetListAttendances=(id)=>{
+    if(id){
+        return axios.get(`/attendances?id=${id}`);
+    }
+    return axios.get("/attendances");
+}
+export const GetListAttendancesSalary=(id)=>{
+    if(id){
+        return axios.get(`/salary?id=${id}`);
+    }
+    return axios.get("/salary");
 }
 export const deleteAttendaces=(id)=>{
-    return axios.delete(`/attendances/${id}`, {headers:{"x-auth-token":token}})
+    return axios.delete(`/attendances/${id}`)
 }
 export const checkOutAttendances=(id)=>{
-    return axios.post(`/attendances/checkout/${id}`, {headers:{"x-auth-token":token}})
+    return axios.post(`/attendances/checkOut/${id}`)
+}
+export const getDetialAttendances=(id)=>{
+    return axios.get(`/attendances/${id}`)
+}
+export  const UpdateAttendances =(id,shift,checkIn,checkOut)=>{
+    return axios.put(`/attendances/${id}`,{
+        shift:shift,
+        checkIn:checkIn,
+        checkOut:checkOut
+    })
 }

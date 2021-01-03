@@ -1,41 +1,36 @@
 import axios from './index';
-
-let token = localStorage.getItem("auth-token")
-            if(token==null) {
-                localStorage.setItem("auth-token","")
-                token=""
-            }
-
-export const createNewUser = (fullname,job,department,email,phone)=>{
+export const createNewUser = (fullname,job,department,email,phone,salary)=>{
     return axios.post('/users',{
         fullname,
         job,
         department,
         email,
-        phone
-    }, {headers:{"x-auth-token":token}})
+        phone,
+        salary
+    })
 }
 export const getListUser=()=>{
-    return axios.get("/users", {headers:{"x-auth-token":token}});
+    return axios.get("/users");
 }
 export const deleteUser=(id)=>{
-    return axios.delete(`/users/${id}`, {headers:{"x-auth-token":token}})
+    return axios.delete(`/users/${id}`)
 }
-export const getDetailUser=(id)=>{
-    return axios.get(`/users/${id}`, {headers:{"x-auth-token":token}})
+export const getDetialUser=(id)=>{
+    return axios.get(`/users/${id}`)
 }
-export const updateUserDetail=(id,fullname,department,job,phone,email)=>{
+export const UpdateUserDetial=(id,fullname,department,job,phone,email,salary=0)=>{
     return axios.put(`/users/${id}`,{
         fullname,
         job,
         department,
         email,
-        phone
-    }, {headers:{"x-auth-token":token}})
+        phone,
+        salary
+    })
 }
-export const loginUser=(email,password)=>{
-    return axios.post("/users/login",{
+export const LoginUser=(email,password)=>{
+    return axios.post("/login",{
         email:email,
         password:password
-    }, {headers:{"x-auth-token":token}})
+    })
 }

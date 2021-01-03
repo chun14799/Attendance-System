@@ -1,40 +1,39 @@
-import React ,{useState, useContext}from 'react'
-import {loginUser} from './../../../api/user'
-import {Link} from "react-router-dom"
-import {toast} from 'react-toastify'
-import './login.css'
-import { useHistory } from "react-router-dom"
-import UserContext from '../../../context/UserContext'
-
-export default function LoginComponent(){
-    let history = useHistory()
-
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-    const {setUserData} = useContext(UserContext)
-
+import React ,{useState}from 'react';
+import {LoginUser} from './../../../api/user';
+import {
+    Link
+} from "react-router-dom";
+import {toast} from 'react-toastify';
+import './login.css';
+import { useHistory } from "react-router-dom";
+export default function(){
+    let history = useHistory();
+    let user = localStorage.getItem('USER');
+    if(user){
+        history.replace("/");
+        return null
+    }
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
     const OnSubmitLogin = ()=>{
-        loginUser(email,password).then(result=>
-        {
-            if(result.data.message==="ERROR"){
-                toast.error("Tên Đăng Nhập Hoặc Tài Khoản Chưa Chính Xác")
-            }
-            else{
-                setUserData({
-                    token: result.data.token,
-                    user: result.data.user
-                })
-                localStorage.setItem("auth-token", result.data.token)    
-                history.replace("/")
+        console.log(email);
+        console.log(password);
+        LoginUser(email,password).then(result=>{
+           if(result.data.message=="ERROR"){
+            toast.error("Tên Đăng Nhập Hoặc Tài Khoản Chưa Chính Xác")
+           }
+           else {
                 toast.success("Đăng Nhập Thành Công!!!")
-            }
+                localStorage.setItem("USER",JSON.stringify(result.data.data));
+                history.replace("/")
+           }
         })
     }
     return(
         <div className="ContainerLogin">
             <div className="ContentFrom">
                 <div style={{textAlign:"center",marginBottom:"10px"}}>
-                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" alt="screen-img"/>
+                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" />
                 </div>
                
                 <div style={{textAlign:"center",fontSize:"20px"}}>

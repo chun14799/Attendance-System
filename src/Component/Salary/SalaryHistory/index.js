@@ -1,16 +1,14 @@
 import React ,{useState,useEffect} from 'react';
 import Header from './../../Common/Header';
 import {Table} from 'react-bootstrap';
-import {GetListAttendances,deleteAttendaces,checkOutAttendances} from './../../../api/attendances';
+import {GetListAttendances,deleteAttendaces,checkOutAttendances,GetListAttendancesSalary} from './../../../api/attendances';
 import { toast } from 'react-toastify';
-import { useHistory } from "react-router-dom";
 import moment from 'moment'
 import './index.css'
 export default function(){
     const [listData,setListData] = useState([]);
-    let history = useHistory();
     useEffect(()=>{
-        GetListAttendances().then(result=>{
+        GetListAttendancesSalary().then(result=>{
             console.log(result.data);
             setListData(result.data);
         })
@@ -29,14 +27,23 @@ export default function(){
     const _checkOutAttendances =(id)=>{
         checkOutAttendances(id).then(result=>{
             console.log(result);
-            GetListAttendances().then(result=>{
+            GetListAttendancesSalary().then(result=>{
                 setListData(result.data);
             })
             toast.success("Check Out Thành Công!!!")
         }).catch(error=>console.log(error))
     }
-    const _OnEditAttendances=(id)=>{
-        history.push(`/attendances/edit/${id}`)
+    const getTotalTime=(checkIn,checkOut)=>{
+        const checkInTime = moment(checkIn);
+        const checkOutTime = moment(checkOut);
+        const Total = checkOutTime.diff(checkInTime,"hours");
+        return Total ;
+    }
+    const getSalary=(checkIn,checkOut,salary)=>{
+        const checkInTime = moment(checkIn);
+        const checkOutTime = moment(checkOut);
+        const Total = checkOutTime.diff(checkInTime,"hours");
+        return Total*salary ;
     }
     const ShowListData =()=>{
         return listData.map((item,index)=>{
@@ -53,11 +60,8 @@ export default function(){
                             <button  className={"checkOutButton"} onClick={()=>_checkOutAttendances(item._id)}>CheckOut</button>
                         }
                     </td>
-                    <td>{item.user.email}</td>
-                    <td>
-                        <span style={{color:"#09A6FF",marginRight:"10px",cursor:"pointer"}} onClick={()=>_OnEditAttendances(item._id)} > Sửa</span>
-                        <span style={{color:"#C4C4C4",cursor:"pointer"}} onClick={()=>_deleteAttendances(item._id)} > Xóa</span>
-                    </td>
+                    <td>{getTotalTime(item.checkIn,item.checkOut)}</td>
+                    <td>{getSalary(item.checkIn,item.checkOut,item.user.salary)}</td>
                 </tr>
             )
         })
@@ -83,7 +87,7 @@ export default function(){
             <div>
                 <div className="HeaderEditAttendances">
                     <div className="TextHeader">
-                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span>-></span><span>Lịch Sử Chấm Công</span>
+                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Lương</span><span>-></span><span>Lịch Sử Lương Nhân Viên</span>
                     </div>
                     <div className="TextContent">
                         <span style={{backgroundColor:"white",padding:"5px 15px"}}>Tất Cả</span>
@@ -101,8 +105,8 @@ export default function(){
                                 <th>Ca</th>
                                 <th>CheckIn</th>
                                 <th>CheckOut</th>
-                                <th>Email</th>
-                                <th>Tùy Chọn</th>
+                                <th>Thời Gian</th>
+                                <th>Lương</th>
                             </tr>
                         </thead>
                         <tbody>
