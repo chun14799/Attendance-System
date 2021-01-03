@@ -1,0 +1,35 @@
+.ContainerEdit {
+    background-image: url("https://i0.wp.com/s1.uphinh.org/2020/12/24/edit-background.png");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100vh;
+}
+.EditHeader {
+    background-color: #C4C4C4;
+    background-size: 100% 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.MainEdit {
+    padding-top: 20px;
+    padding-left: 39px;
+    font-size: 24px;
+}
+.MainEdit input {
+    width: 380px;
+    height: 34px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+.MainEdit .ButtonData {
+    color: #000000;
+    background-color: #C4C4C4;
+    padding: 10px 20px;
+    margin-left: 30px;
+    border-radius: 2px;
+    border-color:#C4C4C4 ;
+}

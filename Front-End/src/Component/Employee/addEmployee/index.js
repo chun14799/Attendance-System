@@ -12,8 +12,9 @@ export default function ListEmployee (){
     const department = React.useRef(null);
     const email = React.useRef(null);
     const phone = React.useRef(null);
+    const salary = React.useRef(null);
     const onCreateUser=()=>{
-        createNewUser(fullname.current.value,job.current.value,department.current.value,email.current.value,phone.current.value).then(result=>{
+        createNewUser(fullname.current.value,job.current.value,department.current.value,email.current.value,phone.current.value,salary.current.value).then(result=>{
             toast.success("Thêm Thành Công")
             history.push("/employee")
         })
@@ -46,6 +47,10 @@ export default function ListEmployee (){
                         <p className="elementEdit" >Phone</p>
                         <div className="elementEdit">
                             <input  type="text" ref={phone}/>
+                        </div>
+                        <p className="elementEdit" >Salary/1h</p>
+                        <div className="elementEdit">
+                            <input  type="text" ref={salary}/>
                         </div>
                         <div className="elementEdit">
                             <button className="ButtonData" onClick={onCreateUser}>Lưu</button>

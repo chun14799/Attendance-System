@@ -52,6 +52,7 @@ const Header = () => {
                                         <div className="list-item">
                                             <p><Link to="/employee">Danh sách nhân viên</Link> </p>
                                             <p><Link to="/attendances/history">Lịch sử chấm công nv</Link></p>
+                                            <p><Link to="/salary/history"> Lương  Nhân Viên </Link></p>
                                         </div>
                                     </div>
                                 </div>:null
@@ -68,7 +69,8 @@ const Header = () => {
                                     </div>
                                     <div className="list-item">
                                         <p><Link to="/attendances/add">Chấm Công Ra Vào </Link></p>
-                                        <p><Link to="/attendances/user">Lịch sử chấm công nv</Link></p>
+                                        <p><Link to="/attendances/user">Lịch sử chấm công </Link></p>
+                                        <p><Link to="/salary/user">Quản Lý Lương</Link></p>
                                     </div>
                                 </div>
                             </div>

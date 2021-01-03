@@ -52,10 +52,6 @@ export default function(){
                         }
                     </td>
                     <td>{item.user.email}</td>
-                    <td>
-                        {/* <span style={{color:"#09A6FF",marginRight:"10px",cursor:"pointer"}} > Sửa</span> */}
-                        <span style={{color:"#C4C4C4",cursor:"pointer"}} onClick={()=>_deleteAttendances(item._id)} > Xóa</span>
-                    </td>
                 </tr>
             )
         })
@@ -100,7 +96,6 @@ export default function(){
                                 <th>CheckIn</th>
                                 <th>CheckOut</th>
                                 <th>Email</th>
-                                <th>Tùy Chọn</th>
                             </tr>
                         </thead>
                         <tbody>

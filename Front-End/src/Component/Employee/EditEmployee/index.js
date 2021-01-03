@@ -14,6 +14,7 @@ export default function ListEmployee (){
     const [job,setJob] = React.useState("");
     const [department,setDepartment] = React.useState("");
     const [email,setEmail] = React.useState("");
+    const [salary,setSalary]=React.useState(0);
     React.useEffect(()=>{
         getDetialUser(id).then(result=>{
             console.log(result);
@@ -22,10 +23,11 @@ export default function ListEmployee (){
             setJob(result.data.job)
             setDepartment(result.data.department)
             setEmail(result.data.email)
+            setSalary(result.data.salary);
         })
     },[])
     const onSubmitUpdate =()=>{
-        UpdateUserDetial(id,fullname,department,job,phone,email).then(()=>{
+        UpdateUserDetial(id,fullname,department,job,phone,email,salary).then(()=>{
             toast.success("Cập Nhật Thành Công !!!")
             history.push("/employee")
         })
@@ -58,6 +60,10 @@ export default function ListEmployee (){
                         <p className="elementEdit">Phone</p>
                         <div className="elementEdit">
                             <input  type="text" value={phone}  onChange={(e)=>setPhone(e.target.value)}/>
+                        </div>
+                        <p className="elementEdit">Salary/1h</p>
+                        <div className="elementEdit">
+                            <input  type="text" value={salary}  onChange={(e)=>setSalary(e.target.value)}/>
                         </div>
                         <div className="elementEdit">
                             <button className="ButtonData" onClick={onSubmitUpdate}>lưu</button>

@@ -39,6 +39,7 @@ export default function ListEmployee (){
                     <td>{item.fullname}</td>
                     <td>{item.department}</td>
                     <td>{item.job}</td>
+                    <td>{item.salary}</td>
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>
@@ -67,6 +68,7 @@ export default function ListEmployee (){
                                 <th>Tên</th>
                                 <th>Văn Phòng Làm Việc</th>
                                 <th>Chức Vu</th>
+                                <th>Lương/1h</th>
                                 <th>Email</th>
                                 <th>SĐT</th>
                                 <th><span style={{backgroundColor:"#0EFC25",padding:"5px 10px",borderRadius:"5px",cursor:"pointer"}} onClick={onAddEmployee}>Thêm</span></th>

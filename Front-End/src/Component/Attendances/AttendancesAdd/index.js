@@ -76,7 +76,7 @@ export default  function(){
                                         <MenuItem value={2}>Trưa</MenuItem>
                                         <MenuItem value={3}>Chiều</MenuItem>
                                         <MenuItem value={4}>Tối</MenuItem>
-                                    </Select>
+                                </Select>
                             </div>
                         </div>
                         {User.roleId==1?
