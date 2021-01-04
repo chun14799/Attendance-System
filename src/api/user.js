@@ -39,3 +39,14 @@ export const loginUser=(email,password)=>{
         password:password
     }, {headers:{"x-auth-token":token}})
 }
+export const registerUser=(email, password, passwordCheck, fullname, job, department, phone)=>{
+    return axios.post("/users/register",{
+        email:email,
+        password:password,
+        passwordCheck:passwordCheck,
+        fullname:fullname,
+        job:job,
+        department:department,
+        phone:phone
+    },{headers:{"x-auth-token":token}})
+}

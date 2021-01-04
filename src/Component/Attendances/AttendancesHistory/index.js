@@ -78,7 +78,7 @@ export default function AttendanceHistory(){
             <div>
                 <div className="HeaderEditAttendances">
                     <div className="TextHeader">
-                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span></span><span>Lịch Sử Chấm Công</span>
+                        <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}></span><span>Lịch Sử Chấm Công</span>
                     </div>
                     <div className="TextContent">
                         <span style={{backgroundColor:"white",padding:"5px 15px"}}>Tất Cả</span>

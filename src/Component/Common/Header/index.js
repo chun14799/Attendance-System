@@ -38,7 +38,7 @@ const Header = () => {
                                 onClick={() => onSetTab(0)}
                             >
                                 <div>
-                                    <span className="name"><Link to="/">Home </Link></span>
+                                    <span className="name"><Link to="/">Home</Link></span>
                                 </div>
                             </div>
                                     <div
@@ -72,14 +72,6 @@ const Header = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                className={`item ${tab === 3 ? "active" : ""}`}
-                                onClick={() => onSetTab(3)}
-                            >
-                                <div>
-                                    <span className="name">Quản Lý dự án</span>
-                                </div>
-                            </div>
                         </div>
                     </Col>
                     <Col lg={2} md={2} xs={2} sm={2} className="header-right_">
@@ -92,7 +84,6 @@ const Header = () => {
                                     <BsFillCaretDownFill className="icon-drop"></BsFillCaretDownFill>
                                 </div>
                                 <div className="list-item">
-                                    <p>xem profile</p>
                                     <p onClick={logOutUser}>Đăng xuất</p>
                                 </div>
                             </div>

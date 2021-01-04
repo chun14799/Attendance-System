@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './../../Common/Header';
-import {createNewUser} from './../../../api/user';
+import {registerUser} from './../../../api/user';
 import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import Author from './../../Common/AuthorComponent';
@@ -12,8 +12,10 @@ export default function ListEmployee (){
     const department = React.useRef(null);
     const email = React.useRef(null);
     const phone = React.useRef(null);
+    const password = React.useRef(null);
+    const passwordCheck = React.useRef(null);
     const onCreateUser=()=>{
-        createNewUser(fullname.current.value,job.current.value,department.current.value,email.current.value,phone.current.value).then(result=>{
+        registerUser(email.current.value,password.current.value,passwordCheck.current.value,fullname.current.value,job.current.value,department.current.value,phone.current.value).then(result=>{
             toast.success("Thêm Thành Công")
             history.push("/employee")
         })
@@ -27,6 +29,18 @@ export default function ListEmployee (){
                 </div>
                 <div className="MainEdit">
                     <div>
+                        <p className="elementEdit" >Email</p>
+                        <div className="elementEdit">
+                            <input  type="text" ref={email}/>
+                        </div>
+                        <p className="elementEdit" >Password</p>
+                        <div className="elementEdit">
+                            <input  type="password" ref={password}/>
+                        </div>
+                        <p className="elementEdit" >Verified Password</p>
+                        <div className="elementEdit">
+                            <input  type="password" ref={passwordCheck}/>
+                        </div>
                         <p className="elementEdit"> Tên</p>
                         <div className="elementEdit">
                             <input  type="text" ref={fullname} />
@@ -38,10 +52,6 @@ export default function ListEmployee (){
                         <p>Văn Phòng</p>
                         <div className="elementEdit">
                             <input  type="text" ref={department}/>
-                        </div>
-                        <p className="elementEdit" >Email</p>
-                        <div className="elementEdit">
-                            <input  type="text" ref={email}/>
                         </div>
                         <p className="elementEdit" >Phone</p>
                         <div className="elementEdit">
