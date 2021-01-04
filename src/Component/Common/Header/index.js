@@ -16,9 +16,16 @@ const Header = () => {
     }
     useEffect(()=>{
         let data = localStorage.getItem("USER");
+<<<<<<< HEAD
         data= JSON.parse(data);
         console.log(data);
         setUser({...data})
+=======
+        if(typeof data!=='undefined'||data!==''){
+            data= JSON.parse(data);
+            setUser({...data})
+        }
+>>>>>>> parent of b408845... add token to api
     },[])
     const LogOutUser = ()=>{
         localStorage.clear("USER")
@@ -39,7 +46,11 @@ const Header = () => {
                                 </div>
                             </div>
                             {
+<<<<<<< HEAD
                                     user.roleId==1?
+=======
+                                    user.roleId===1?
+>>>>>>> parent of b408845... add token to api
                                     <div
                                     className={`item ${tab === 1 ? "active" : ""}`}
                                     onClick={() => onSetTab(1)}

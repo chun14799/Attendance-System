@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './../../Common/Header';
+<<<<<<< HEAD
 import {useParams} from 'react-router-dom';
 import {getDetialAttendances,UpdateAttendances} from './../../../api/attendances';
 import { useHistory } from "react-router-dom";
@@ -34,6 +35,9 @@ export default function ListEmployee (){
             history.goBack();
         })
     }
+=======
+export default  function (){
+>>>>>>> parent of b408845... add token to api
     return (
         <Author>
             <Header></Header>
