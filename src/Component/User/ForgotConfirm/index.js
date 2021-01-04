@@ -1,18 +1,20 @@
 import React ,{useState}from 'react';
+import {LoginUser} from './../../../api/user';
+import {
+    Link
+} from "react-router-dom";
 import {toast} from 'react-toastify';
 import './login.css';
 import { useHistory } from "react-router-dom";
-export default function ForgotConfirm(){
-    const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
-
+export default function(){
     let history = useHistory();
-    let user = localStorage.getItem('auth-token');
+    let user = localStorage.getItem('USER');
     if(user){
         history.replace("/");
         return null
     }
-    
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
     const OnSubmitLogin = ()=>{
         toast.success("Vui Lòng Kiểm tra email!!")
         history.replace("/login")
@@ -21,7 +23,7 @@ export default function ForgotConfirm(){
         <div className="ContainerLogin">
             <div className="ContentFrom">
                 <div style={{textAlign:"center",marginBottom:"10px"}}>
-                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" alt="icon-login"/>
+                    <img src="https://i0.wp.com/s1.uphinh.org/2020/12/25/icon-login-2.png" />
                 </div>
                
                 <div style={{textAlign:"center",fontSize:"20px"}}>

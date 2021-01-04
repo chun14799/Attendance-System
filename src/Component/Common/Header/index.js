@@ -38,7 +38,7 @@ const Header = () => {
                                 onClick={() => onSetTab(0)}
                             >
                                 <div>
-                                    <span className="name"><Link to="/">Home </Link></span>
+                                    <span className="name">Home</span>
                                 </div>
                             </div>
                                     <div
