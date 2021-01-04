@@ -116,3 +116,9 @@
 .MainEdit .elementEdit {
     margin-top: 10px;
 }
+.list-item>p:hover {
+    background-color: #0A72ED;
+}
+.list-item>p:hover a{
+    color: black;
+}

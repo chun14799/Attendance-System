@@ -1,13 +1,13 @@
-import React ,{useState,useEffect}from 'react';
+import React ,{useState,useEffect,useRef}from 'react';
 import Header from './../../Common/Header';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import {getListUser} from './../../../api/user';
-import {createCheckInAttendances} from './../../../api/attendances';
+import {CreateCheckInAttendances} from './../../../api/attendances';
 import { toast } from 'react-toastify';
 import Author from './../../Common/AuthorComponent';
 import './index.css'
-export default function AttendancesAdd(){
+export default  function(){
     const [listUser,setListUser]=useState([]);
     const [id,setId] = useState(null);
     const [fullname,setFullName]=useState("");
@@ -15,6 +15,8 @@ export default function AttendancesAdd(){
     const [email,setEmail]= useState("");
     const [shift,setShift] = useState(1);
     const [note,setNote] = useState("");
+    let User = localStorage.getItem("USER");
+    User = JSON.parse(User);
     useEffect(()=>{
         getListUser().then((result)=>{
             setListUser(result.data);
@@ -26,7 +28,7 @@ export default function AttendancesAdd(){
     const onChangeUser=(e)=>{
         setId(e.target.value)
         listUser.forEach((item)=>{
-            if(item._id===e.target.value){
+            if(item._id==e.target.value){
                 setFullName(item.fullname);
                 setDepartment(item.department);
                 setEmail(item.email);
@@ -37,7 +39,12 @@ export default function AttendancesAdd(){
         if(!id){
             toast.error("Vui Lòng Chọn Nhân Viên !!!");
         }
-        createCheckInAttendances(id,shift,note).then(result=>{
+        CreateCheckInAttendances(id,shift,note).then(result=>{
+            toast.success("Check In Thành Công");
+        })
+    }
+    const _onCreateAttendancesUser=()=>{
+        CreateCheckInAttendances(User._id,shift,note).then(result=>{
             toast.success("Check In Thành Công");
         })
     }
@@ -46,7 +53,7 @@ export default function AttendancesAdd(){
             <Header />
             <div>
                 <div className="HeaderMain">
-                    <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span></span><span>Chấm Công Ra Vào</span>
+                    <span style={{color:"#000000",fontWeight:"bold",fontSize:"17px"}}>Chấm Công</span><span>-></span><span>Chấm Công Ra Vào</span>
                 </div>
                 <div className="MainContent">
                     <div style={{flex:1,padding:"0px 30px"}}>
@@ -69,27 +76,68 @@ export default function AttendancesAdd(){
                                         <MenuItem value={2}>Trưa</MenuItem>
                                         <MenuItem value={3}>Chiều</MenuItem>
                                         <MenuItem value={4}>Tối</MenuItem>
-                                    </Select>
-                            </div>
-                        </div>
-                        <div className="MainInput">
-                            <div className="InPutName">
-                                Chọn Nhân Viên
-                            </div>
-                            <div>
-                                <Select style={{minWidth:"200px"}} defaultValue={1} onChange={onChangeUser}>
-                                    {
-                                        ShowListUser()
-                                    }
                                 </Select>
                             </div>
                         </div>
+                        {User.roleId==1?
+                        <React.Fragment>
+                        
+                            <div className="MainInput">
+                                <div className="InPutName">
+                                    Chọn Nhân Viên
+                                </div>
+                                <div>
+                                    <Select style={{minWidth:"200px"}} defaultValue={1} onChange={onChangeUser}>
+                                        {
+                                            ShowListUser()
+                                        }
+                                    </Select>
+                                </div>
+                            </div>
+                            <div className="MainInput">
+                                <div className="InPutName">
+                                    Tên Nhân Viên
+                                </div>
+                                <div>
+                                    <input type="text" className="InputData" readOnly value={fullname}/>
+                                </div>
+                            </div>
+                            <div className="MainInput">
+                                <div className="InPutName">
+                                    Phòng Ban
+                                </div>
+                                <div>
+                                    <input type="text"  className="InputData" readOnly value={department}/>
+                                </div>
+                            </div>
+                            <div className="MainInput">
+                                <div className="InPutName">
+                                    Email
+                                </div>
+                                <div>
+                                    <input type="text"  className="InputData" readOnly value={email} />
+                                </div>
+                            </div>
+                            <div className="MainInput">
+                                <div className="InPutName">
+                                    Ghi Chú
+                                </div>
+                                <div>
+                                    <textarea  rows="4" cols="50"  className="InputData" value={note} onChange={(e)=>setNote(e.target.value)}/>
+                                </div>
+                            </div>
+                            <div style={{marginTop:"20px"}}>
+                                <button className="btnSubmitData" onClick={onCreateAttendances}>Chấm Công Vào</button>
+                            </div>
+                        </React.Fragment>:
+                        <React.Fragment>
+                        
                         <div className="MainInput">
                             <div className="InPutName">
                                 Tên Nhân Viên
                             </div>
                             <div>
-                                <input type="text" className="InputData" readOnly value={fullname}/>
+                                <input type="text" className="InputData" readOnly value={User.fullname}/>
                             </div>
                         </div>
                         <div className="MainInput">
@@ -97,7 +145,7 @@ export default function AttendancesAdd(){
                                 Phòng Ban
                             </div>
                             <div>
-                                <input type="text"  className="InputData" readOnly value={department}/>
+                                <input type="text"  className="InputData" readOnly value={User.department}/>
                             </div>
                         </div>
                         <div className="MainInput">
@@ -105,7 +153,7 @@ export default function AttendancesAdd(){
                                 Email
                             </div>
                             <div>
-                                <input type="text"  className="InputData" readOnly value={email} />
+                                <input type="text"  className="InputData" readOnly value={User.email} />
                             </div>
                         </div>
                         <div className="MainInput">
@@ -117,8 +165,10 @@ export default function AttendancesAdd(){
                             </div>
                         </div>
                         <div style={{marginTop:"20px"}}>
-                            <button className="btnSubmitData" onClick={onCreateAttendances}>Chấm Công Vào</button>
+                            <button className="btnSubmitData" onClick={_onCreateAttendancesUser}>Chấm Công Vào</button>
                         </div>
+                    </React.Fragment> 
+                    }
                     </div>
                 </div>
             </div>
